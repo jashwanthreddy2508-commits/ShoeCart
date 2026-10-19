@@ -1,0 +1,349 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+/* Daily Cart shoe catalog theme */
+body {
+  background: #f3f0ea;
+  color: #171717;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  border: 0;
+  text-align: left;
+}
+
+.container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 72px 0 96px;
+}
+
+.container::before {
+  content: 'SOLE / 2026';
+  display: block;
+  color: #d35b37;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  margin-bottom: 18px;
+}
+
+.container::after {
+  content: 'Everyday movement, considered.  |  New season footwear';
+  display: block;
+  color: #77736e;
+  font-size: 13px;
+  letter-spacing: .04em;
+  margin-top: 36px;
+}
+
+.store-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 286px;
+  gap: 34px;
+  align-items: start;
+}
+
+.cart-panel {
+  background: #171717;
+  color: #f8f5ef;
+  min-height: 280px;
+  padding: 24px;
+  position: sticky;
+  top: 24px;
+}
+
+.cart-panel-heading { align-items: flex-start; display: flex; justify-content: space-between; }
+.cart-label { color: #d35b37; font-size: 10px; font-weight: 700; letter-spacing: .16em; }
+.cart-panel h2 { color: #f8f5ef; font-family: Georgia, 'Times New Roman', serif; font-size: 25px; font-weight: 400; margin: 7px 0 0; }
+.cart-badge { align-items: center; background: #d35b37; border-radius: 50%; display: flex; font-size: 12px; height: 28px; justify-content: center; width: 28px; }
+.empty-cart { color: #aaa49b; font-size: 13px; line-height: 1.6; margin: 48px 0 64px; }
+.cart-items { margin: 28px 0; max-height: 300px; overflow-y: auto; }
+.cart-item { align-items: center; border-top: 1px solid #3a3936; display: flex; gap: 12px; padding: 12px 0; }
+.cart-item img { background: #e8e3dc; height: 54px; object-fit: contain; padding: 4px; width: 54px; }
+.cart-item h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: 400; margin: 0 0 4px; }
+.cart-item p { color: #aaa49b; font-size: 12px; margin: 0; }
+.remove-button { background: transparent; border: 0; color: #aaa49b; cursor: pointer; font-size: 22px; line-height: 1; margin-left: auto; padding: 4px; }
+.remove-button:hover { color: #d35b37; }
+.remove-button:focus-visible { outline: 2px solid #d35b37; outline-offset: 2px; }
+.cart-total { border-top: 1px solid #3a3936; display: flex; font-size: 13px; justify-content: space-between; padding: 18px 0; }
+.cart-total strong { color: #f8f5ef; }
+.checkout-button { background: #d35b37; border: 1px solid #d35b37; color: #171717; cursor: pointer; font-size: 12px; font-weight: 700; padding: 13px 15px; text-transform: uppercase; width: 100%; }
+.checkout-button:hover:not(:disabled) { background: #f2c2a8; }
+.checkout-button:disabled { cursor: not-allowed; opacity: .4; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 20px;
+  position: relative;
+}
+
+.cards::before {
+  content: 'Shoe study';
+  grid-column: 1 / -1;
+  color: #171717;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(46px, 8vw, 104px);
+  font-weight: 400;
+  letter-spacing: -.07em;
+  line-height: .9;
+  margin-bottom: 18px;
+}
+
+.card {
+  background: #e8e3dc;
+  border: 1px solid rgba(23, 23, 23, .12);
+  min-width: 0;
+  padding-bottom: 19px;
+  position: relative;
+  transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.card:hover { box-shadow: 8px 8px 0 #d35b37; transform: translateY(-5px); }
+.card:nth-child(3n + 2) { background: #deded5; }
+.card:nth-child(3n + 3) { background: #e9d8c6; }
+
+.card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.22 / 1;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  padding: 18px;
+  transition: transform .3s ease;
+}
+
+.card:hover img { transform: scale(1.05) rotate(-2deg); }
+
+.card h4 {
+  color: #171717;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin: 8px 20px 3px;
+}
+
+.card p { color: #77736e; font-size: 13px; margin: 4px 20px; }
+.card p:first-of-type { color: #171717; font-size: 15px; font-weight: 700; }
+
+.card button {
+  background: #171717;
+  border: 1px solid #171717;
+  color: #f8f5ef;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  margin: 17px 20px 0;
+  padding: 11px 15px;
+  text-transform: uppercase;
+  transition: background .2s ease, color .2s ease;
+}
+
+.card button:hover { background: transparent; color: #171717; }
+.card button:focus-visible { outline: 3px solid #d35b37; outline-offset: 3px; }
+
+@media (max-width: 760px) {
+  .container { width: min(100% - 28px, 520px); padding: 42px 0 64px; }
+  .store-layout { display: block; }
+  .cart-panel { margin-top: 34px; position: static; }
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .cards::before { font-size: 56px; margin-bottom: 12px; }
+  .card h4 { font-size: 17px; margin-inline: 13px; }
+  .card p { margin-inline: 13px; }
+  .card button { margin-inline: 13px; width: calc(100% - 26px); }
+  .card img { padding: 8px; }
+}
+
+@media (max-width: 420px) {
+  .cards { grid-template-columns: 1fr; }
+  .card img { aspect-ratio: 1.5 / 1; }
+}
